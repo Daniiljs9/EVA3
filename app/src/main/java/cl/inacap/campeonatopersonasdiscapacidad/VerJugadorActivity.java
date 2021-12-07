@@ -22,6 +22,7 @@ public class VerJugadorActivity extends ListActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        cargarLista();
     }
 
     public void cargarLista() {
@@ -41,7 +42,7 @@ public class VerJugadorActivity extends ListActivity {
                 startActivityForResult(intent, 1);
             }
         });
-/*
+    }
         @Override
         protected void onActivityResult(int requestCode, int resultCode, Intent data){
             if(requestCode==1){
@@ -49,6 +50,5 @@ public class VerJugadorActivity extends ListActivity {
                     cargarLista();
                 }
             }
-        }*/
-    }
+        }
 }

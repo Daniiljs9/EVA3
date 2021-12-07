@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     public void verJugador(View view) {
         try {
             ArrayList<Jugador> jugadores = (ArrayList<Jugador>) helper.listaJugadores();
-            Intent intent = new Intent(this, EditarDatosActivity.class);
+            Intent intent = new Intent(this, VerJugadorActivity.class);
             startActivity(intent);
         }catch (Exception ex){
             Toast.makeText(this, "No hay jugadores inscritos", Toast.LENGTH_SHORT).show();

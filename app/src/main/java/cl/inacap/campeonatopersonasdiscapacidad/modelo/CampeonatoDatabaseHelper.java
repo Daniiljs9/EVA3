@@ -57,13 +57,14 @@ public class CampeonatoDatabaseHelper extends SQLiteOpenHelper {
         valores.put("SEXO",jugadores.getSexo());
         valores.put("CLUB", jugadores.getClub());
         valores.put("DISCAPACIDAD", jugadores.getDiscapacidad());
+        db.insert("JUGADOR", null,valores);
     }
 
     //SELECT
     public List<Jugador> listaJugadores() {
         SQLiteDatabase db = getReadableDatabase();
         List<Jugador> jugadores = new ArrayList<>();
-        Cursor cursor = db.query("JUGADORES",
+        Cursor cursor = db.query("JUGADOR",
                 new String[]{"NOMBRE", "RUT", "ALTURA", "PESO", "EDAD", "NACIMIENTO", "SEXO", "CLUB", "DISCAPACIDAD"},
                 null, null, null, null, null);
         cursor.moveToFirst();
@@ -96,8 +97,25 @@ public class CampeonatoDatabaseHelper extends SQLiteOpenHelper {
         } catch (SQLException ex) {
             return "No se puede cambiar el nombre";
         }
+    }
+    //otra forma
+       public boolean update(String s1, String s2,String s3, String s4, int i5, String s6, String s7, String s8, String s9) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("NOMBRE",s1);
+        contentValues.put("RUT",s2);
+        contentValues.put("ALTURA",s3);
+        contentValues.put("PESO",s4);
+        contentValues.put("EDAD",i5);
+        contentValues.put("NACIMIENTO",s6);
+        contentValues.put("SEXO",s7);
+        contentValues.put("CLUB",s8);
+        contentValues.put("DISCAPACIDAD",s9);
+        db.update("JUGADOR",contentValues,"RUT=?",new String[] {String.valueOf(s2)});
+        return true;
     }*/
 
+//SELECT
     public Jugador getJugador(String nombre){
         Jugador j;
         SQLiteDatabase db = getReadableDatabase();
@@ -106,9 +124,6 @@ public class CampeonatoDatabaseHelper extends SQLiteOpenHelper {
         try{
             Cursor cursor = db.rawQuery(sqlTxt,argumentos);
             cursor.moveToFirst();
-            boolean estado = false;
-
-            if(cursor.getInt(3)==1) estado = true;
 
             j = new Jugador(cursor.getString(0), cursor.getString(1),cursor.getString(2), cursor.getString(3),cursor.getInt(4), cursor.getString(5), cursor.getString(6), cursor.getString(7), cursor.getString(8) );
 

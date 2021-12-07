@@ -8,6 +8,15 @@
     tools:context=".MainActivity">
 
 
+    <ImageView
+        android:id="@+id/foto1"
+        android:layout_width="170dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/deportes"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+    />
+
     <Button
         android:id="@+id/registrarse"
         android:layout_width="match_parent"
@@ -16,7 +25,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="60dp"
         android:text="Registrarse"
         android:onClick="registrarse"
@@ -30,11 +39,44 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="160dp"
         android:layout_marginEnd="60dp"
         android:text="Ver Jugadores"
         android:onClick="verJugador"
         />
 
+    <ImageView
+        android:id="@+id/foto2"
+        android:layout_width="170dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/balonmano"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginEnd="60dp"
+        />
+    <ImageView
+        android:id="@+id/foto3"
+        android:layout_width="170dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/ciclismo"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="338dp"
+        android:layout_marginEnd="60dp"
+        />
+    <ImageView
+        android:id="@+id/foto4"
+        android:layout_width="170dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/tenis"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="450dp"
+        android:layout_marginEnd="60dp"
+        />
 
 </RelativeLayout>

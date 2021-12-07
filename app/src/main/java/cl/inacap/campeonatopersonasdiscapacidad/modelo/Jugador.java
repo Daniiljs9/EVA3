@@ -12,8 +12,6 @@ public class Jugador {
     private String club ;
     private String discapacidad;
 
-    //getter y setter / metodo constructor / toString
-
 
     public String getNombre() {
         return nombre;
@@ -101,16 +99,8 @@ public class Jugador {
 
     @Override
     public String toString() {
-        return "Jugador{" +
-                "nombre='" + nombre + '\'' +
-                ", rut='" + rut + '\'' +
-                ", altura='" + altura + '\'' +
-                ", peso='" + peso + '\'' +
-                ", edad='" + edad + '\'' +
-                ", nacimiento='" + nacimiento + '\'' +
-                ", sexo='" + sexo + '\'' +
-                ", club='" + club + '\'' +
-                ", discapacidad='" + discapacidad + '\'' +
-                '}';
+        return " nombre: " + nombre +
+                "\n rut: " + rut +
+                "\n club: " + club;
     }
 }
